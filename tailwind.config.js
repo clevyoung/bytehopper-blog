@@ -1,19 +1,26 @@
-
 const config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,css,scss}'],
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        hero: "url('/static/images/hero-bg.png')",
+      },
+      colors: {
+        primary: '#1758FF',
+        blue: '#EAF5FF',
+        red: '#FFEAE3',
+        yellow: '#FFF4E3',
+        black: '#191F28',
+        'gray-100': '#F9FAFB',
+        'gray-200': '#F0F3F6',
+        'gray-300': '#D9DCDE',
+        'gray-400': '#8B95A1',
+        'gray-500': '#6B7684',
+        'gray-600': '#425968',
+        'gray-700': '#333D4F',
       },
     },
   },
-  plugins: [],
-}
-export default config
+  plugins: [require('@tailwindcss/typography'), require('tailwind-scrollbar-hide')],
+};
+export default config;
