@@ -1,7 +1,7 @@
 import React from 'react';
 import NextLink from 'next/link';
 
-import { Down, Global, Moon } from '@/components/icons';
+import { Down, Global, Moon } from '@/components/common/icons';
 
 import navLinks from '@/data/nav-links';
 
