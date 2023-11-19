@@ -7,6 +7,8 @@ const config = {
       },
       colors: {
         primary: '#1758FF',
+        'secondary-100': '#F1F8FF',
+        'secondary-200': '#4D7EFF',
         blue: '#EAF5FF',
         red: '#FFEAE3',
         yellow: '#FFF4E3',
