@@ -7,7 +7,7 @@ import Tag from '@/components/common/tag';
 export default function BlogListPage() {
   return (
     <main className='w-section mx-auto min-h-screen'>
-      <div className='mt-20 flex justify-between gap-20'>
+      <div className='my-20 flex justify-between gap-20'>
         <div className='w-3/4'>
           <h2 className='text-3xl font-bold'>
             All Blog Posts
