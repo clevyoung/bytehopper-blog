@@ -1,5 +1,9 @@
 import NextImage from 'next/image';
 
+import { allBlogs } from 'contentlayer/generated';
+
+import PostList from '@/components/common/post/post-list';
+
 export default function Home() {
   return (
     <main className='min-h-screen'>
@@ -19,7 +23,18 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='w-section mx-auto'></div>
+      <div className='w-section mx-auto'>
+        <div className='mt-20'>
+          <div className='mb-20'>
+            <h2 className='text-3xl font-bold'>최신 포스트</h2>
+            <PostList posts={allBlogs} count={3} />
+          </div>
+          <div className='mb-20'>
+            <h2 className='text-3xl font-bold'>인기 포스트</h2>
+            <PostList posts={allBlogs} count={3} />
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
