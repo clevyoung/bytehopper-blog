@@ -18,7 +18,7 @@ const colorVariants = {
 const Tag = ({ name, icon, colorScheme = 'gray' }: Props) => {
   return (
     <span
-      className={`${colorVariants[colorScheme]} flex items-center rounded-md px-2 py-1`}
+      className={`${colorVariants[colorScheme]} inline-flex items-center rounded-md px-2 py-1`}
       role='tag'
     >
       {icon && <span className='mr-1'>{icon}</span>}

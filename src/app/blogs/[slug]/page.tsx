@@ -2,15 +2,15 @@ import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { allBlogs, Blog } from 'contentlayer/generated';
-import { format } from 'date-fns';
+import { compareDesc, format } from 'date-fns';
+import {} from 'date-fns';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import { Heart, Share } from '@/components/common/icons';
+import Tag from '@/components/common/tag';
 
 const getSortedPosts = (posts: Blog[]) => {
-  return [...posts].sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  );
+  return posts.sort((a, b) => compareDesc(new Date(a.publishedAt), new Date(b.publishedAt)));
 };
 
 function getPost(slug: string) {
@@ -108,6 +108,40 @@ export default function BlogPostPage({ params }: Props) {
       </div>
       <div>
         <MDXComponent />
+      </div>
+      <div className='mb-8'>
+        {post.tags?.map((tag) => {
+          return <Tag name={tag} key={tag} />;
+        })}
+      </div>
+      <div className='flex justify-between mb-8 pb-6 border-b border-gray-300'>
+        <div>
+          <button className='border border-gray-300 rounded px-2 py-1 text-sm'>좋아요</button>
+        </div>
+        <div>
+          <button className='border border-gray-300 rounded px-2 py-1 text-sm mr-2'>목록</button>
+          <button className='border border-gray-300 rounded px-2 py-1 text-sm'>공유하기</button>
+        </div>
+      </div>
+      <div className='flex rounded-xl bg-gray-100 px-6 py-8 vertical-divider relative'>
+        <div className='w-1/2 pr-4'>
+          <div>
+            <span></span>
+            <strong className='text-lg text-primary'>Prev Post</strong>
+          </div>
+          <NextLink href={`/blogs/${prev?._raw.flattenedPath}`} className='text-sm text-gray-500'>
+            {prev?.title}
+          </NextLink>
+        </div>
+        <div className='flex w-1/2 flex-col items-end pl-4'>
+          <div>
+            <span></span>
+            <strong className='text-lg text-primary'>Next Post</strong>
+          </div>
+          <NextLink href={`/blogs/${next?._raw.flattenedPath}`} className='text-sm text-gray-500'>
+            {next?.title}
+          </NextLink>
+        </div>
       </div>
     </div>
   );
