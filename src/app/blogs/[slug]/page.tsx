@@ -110,7 +110,7 @@ export default function BlogPostPage({ params }: Props) {
       <div className='prose prose-lg max-w-none dark:prose-dark'>
         <MDXComponent />
       </div>
-      <div className='mb-8'>
+      <div className='mb-8 mt-24'>
         {post.tags?.map((tag) => {
           return <Tag name={tag} key={tag} />;
         })}
