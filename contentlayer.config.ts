@@ -1,4 +1,8 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import rehypePresetMinify from 'rehype-preset-minify';
+import rehypePrismPlus from 'rehype-prism-plus';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 
 const Blog = defineDocumentType(() => ({
   name: 'Blog',
@@ -36,4 +40,8 @@ const Blog = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Blog],
+  mdx: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeSlug, [rehypePrismPlus, { ignoreMissing: true }], rehypePresetMinify],
+  },
 });

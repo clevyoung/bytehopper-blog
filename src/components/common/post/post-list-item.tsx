@@ -23,7 +23,7 @@ const PostListItem = (props: Props) => {
           colorScheme='blue'
           icon={<Calendar />}
         />
-        <Tag name='123temp' colorScheme='red' icon={<Heart />} />
+        <Tag name='123temp' colorScheme='red' icon={<Heart width={16} height={16} />} />
         <Tag name='456temp' colorScheme='yellow' icon={<Show />} />
         {tags?.map((tag: string, index: number) => (
           <Tag key={index} name={tag} colorScheme='gray' />
