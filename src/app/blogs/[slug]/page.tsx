@@ -87,7 +87,7 @@ export default function BlogPostPage({ params }: Props) {
           <span className='text-gray-500'>{format(new Date(post.publishedAt), 'yyyy-MM-dd')}</span>
         </div>
       </div>
-      <div className='mb-20 rounded-md border-l-8 border-gray-300 bg-secondary-100 px-8 py-10'>
+      <div className='mb-10 rounded-md border-l-8 border-gray-300 bg-secondary-100 px-8 py-10'>
         <span className='mb-6 inline-block text-2xl font-semibold text-gray-700'>
           {seriesTitle}
         </span>
@@ -153,6 +153,40 @@ export default function BlogPostPage({ params }: Props) {
           </NextLink>
         </div>
       </div>
+      {/* <div className='fixed right-0 top-0 col-span-12 lg:col-span-4'>
+        <details
+          className='border-dark dark:border-light text-dark dark:text-light sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto rounded-lg border-[1px] border-solid p-4'
+          open
+        >
+          <summary className='cursor-pointer text-lg font-semibold capitalize'>
+            Table Of Content
+          </summary>
+          <ul className='font-in mt-4 text-base'>
+            {post.toc.map((heading: any) => {
+              return (
+                <li key={`#${heading.slug}`} className='py-1'>
+                  <a
+                    href={`#${heading.slug}`}
+                    data-level={heading.level}
+                    className='border-dark/40  flex
+                                       items-center justify-start border-solid
+                                       data-[level=two]:border-t
+                                       data-[level=three]:pl-4
+                                       data-[level=two]:pl-0 data-[level=two]:pt-2 sm:data-[level=three]:pl-6
+                                       '
+                  >
+                    {heading.level === 'three' ? (
+                      <span className='bg-dark mr-2 flex h-1 w-1 rounded-full'>&nbsp;</span>
+                    ) : null}
+
+                    <span className='hover:underline'>{heading.text}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </details>
+      </div> */}
     </div>
   );
 }

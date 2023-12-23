@@ -1,6 +1,7 @@
 import { allBlogs } from 'contentlayer/generated';
 
-import PostList from '@/components/common/post/post-list';
+import PostList from '@/components/post/post-list';
+import SeriesList from '@/components/series/series-list';
 
 export default function Home() {
   return (
@@ -14,6 +15,10 @@ export default function Home() {
         </div>
       </div>
       <div className='w-section mx-auto'>
+        <div className='mt-20'>
+          <h2 className='text-3xl font-bold'>시리즈</h2>
+          <SeriesList count={3} />
+        </div>
         <div className='mt-20'>
           <div className='mb-20'>
             <h2 className='text-3xl font-bold'>최신 포스트</h2>
