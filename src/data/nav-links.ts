@@ -1,7 +1,7 @@
 const navLinks = [
   { title: 'Blog', href: '/blogs' },
   { title: 'Series', href: '/series' },
-  { title: 'About', href: '/about' },
+  { title: 'Cheatsheets', href: '/cheatsheets' },
 ];
 
 export default navLinks;

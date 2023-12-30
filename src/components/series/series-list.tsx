@@ -14,6 +14,7 @@ interface Props {
 
 const SeriesList = ({ count }: Props) => {
   const seriesToShow = count ? seriesData.slice(0, count) : seriesData;
+
   function timeSince(date: string): string {
     const now = new Date();
     const pastDate = new Date(date);

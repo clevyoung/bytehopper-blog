@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm';
 
 const Blog = defineDocumentType(() => ({
   name: 'Blog',
-  filePathPattern: '**/**/*.mdx',
+  filePathPattern: 'blog/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: {
@@ -37,9 +37,31 @@ const Blog = defineDocumentType(() => ({
   },
 }));
 
+const Cheatsheet = defineDocumentType(() => ({
+  name: 'Cheatsheet',
+  filePathPattern: 'cheatsheet/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+    },
+    category: { type: 'string' },
+    description: { type: 'string' },
+    tags: { type: 'list', of: { type: 'string' } },
+    images: { type: 'list', of: { type: 'string' } },
+    canonicalUrl: { type: 'string' },
+  },
+  computedFields: {
+    url: {
+      type: 'string',
+      resolve: (doc) => `/cheatsheets/${doc._raw.flattenedPath}`,
+    },
+  },
+}));
+
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Blog],
+  documentTypes: [Blog, Cheatsheet],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypeSlug, [rehypePrismPlus, { ignoreMissing: true }], rehypePresetMinify],

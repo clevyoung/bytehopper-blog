@@ -6,6 +6,25 @@ body {
   color: #191f28;
 }
 
+.after-content {
+  position: relative;
+}
+
+.absolute-image {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+}
+
+.after-content::after {
+  padding-top: 85%;
+  padding-top: calc(100% - 40px);
+  display: block;
+  content: '';
+}
+
 @media (min-width: 1280px) {
   .w-section {
     max-width: 64rem;
