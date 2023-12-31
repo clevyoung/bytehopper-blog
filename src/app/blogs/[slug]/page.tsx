@@ -13,7 +13,7 @@ const getSortedPosts = (posts: Blog[]) => {
 };
 
 function getPost(slug: string) {
-  const post = allBlogs.find((p) => p._raw.flattenedPath === slug);
+  const post = allBlogs.find((p) => p._raw.flattenedPath.replace(/^[^/]*\//, '') === slug);
 
   if (!post) {
     return {};

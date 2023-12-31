@@ -4,9 +4,18 @@ import rehypePrismPlus from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
+const computedFields = {
+  url: {
+    type: 'string',
+    resolve: (doc) => {
+      return `/${doc._raw.flattenedPath}`;
+    },
+  },
+}
+
 const Blog = defineDocumentType(() => ({
   name: 'Blog',
-  filePathPattern: 'blog/**/*.mdx',
+  filePathPattern: 'blogs/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: {
@@ -29,17 +38,12 @@ const Blog = defineDocumentType(() => ({
     images: { type: 'list', of: { type: 'string' } },
     canonicalUrl: { type: 'string' },
   },
-  computedFields: {
-    url: {
-      type: 'string',
-      resolve: (doc) => `/blogs/${doc._raw.flattenedPath}`,
-    },
-  },
+  computedFields
 }));
 
 const Cheatsheet = defineDocumentType(() => ({
   name: 'Cheatsheet',
-  filePathPattern: 'cheatsheet/**/*.mdx',
+  filePathPattern: 'cheatsheets/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: {
@@ -51,12 +55,7 @@ const Cheatsheet = defineDocumentType(() => ({
     images: { type: 'list', of: { type: 'string' } },
     canonicalUrl: { type: 'string' },
   },
-  computedFields: {
-    url: {
-      type: 'string',
-      resolve: (doc) => `/cheatsheets/${doc._raw.flattenedPath}`,
-    },
-  },
+  computedFields
 }));
 
 export default makeSource({
