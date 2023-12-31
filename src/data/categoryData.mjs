@@ -1,21 +1,5 @@
 const categoryData = [
   {
-    name: 'React',
-    image: {
-      src: '/static/images/cheatsheets/react.svg',
-      alt: 'React cheatsheet',
-    },
-    slug: 'react',
-  },
-  {
-    name: 'Next',
-    image: {
-      src: '/static/images/cheatsheets/next.svg',
-      alt: 'React cheatsheet',
-    },
-    slug: 'next',
-  },
-  {
     name: 'Javascript',
     image: {
       src: '/static/images/cheatsheets/javascript.svg',
@@ -30,6 +14,22 @@ const categoryData = [
       alt: 'Typescript cheatsheet',
     },
     slug: 'typescript',
+  },
+  {
+    name: 'React',
+    image: {
+      src: '/static/images/cheatsheets/react.svg',
+      alt: 'React cheatsheet',
+    },
+    slug: 'react',
+  },
+  {
+    name: 'Next',
+    image: {
+      src: '/static/images/cheatsheets/next.svg',
+      alt: 'React cheatsheet',
+    },
+    slug: 'next',
   },
   {
     name: 'Algorithm',
@@ -48,12 +48,20 @@ const categoryData = [
     slug: 'css',
   },
   {
-    name: 'Web API',
+    name: 'Browser API',
     image: {
-      src: '/static/images/cheatsheets/web-api.svg',
-      alt: 'Web API cheatsheet',
+      src: '/static/images/cheatsheets/browser-api.svg',
+      alt: 'Browser API cheatsheet',
     },
-    slug: 'webapi',
+    slug: 'browser-api',
+  },
+  {
+    name: 'Dev',
+    image: {
+      src: '/static/images/cheatsheets/dev.svg',
+      alt: 'Dev cheatsheet',
+    },
+    slug: 'dev',
   },
 ];
 
