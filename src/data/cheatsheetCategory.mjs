@@ -1,4 +1,4 @@
-const categoryData = [
+const cheatsheetCategory = [
   {
     name: 'Javascript',
     image: {
@@ -6,6 +6,7 @@ const categoryData = [
       alt: 'Javascript cheatsheet',
     },
     slug: 'javascript',
+    tags: [],
   },
   {
     name: 'Typescript',
@@ -32,20 +33,20 @@ const categoryData = [
     slug: 'next',
   },
   {
-    name: 'Algorithm',
-    image: {
-      src: '/static/images/cheatsheets/algorithm.svg',
-      alt: 'Algorithm cheatsheet',
-    },
-    slug: 'algorithm',
-  },
-  {
     name: 'CSS',
     image: {
       src: '/static/images/cheatsheets/css.svg',
       alt: 'CSS cheatsheet',
     },
     slug: 'css',
+  },
+  {
+    name: 'Algorithm',
+    image: {
+      src: '/static/images/cheatsheets/algorithm.svg',
+      alt: 'Algorithm cheatsheet',
+    },
+    slug: 'algorithm',
   },
   {
     name: 'Browser API',
@@ -65,4 +66,4 @@ const categoryData = [
   },
 ];
 
-export default categoryData;
+export default cheatsheetCategory;

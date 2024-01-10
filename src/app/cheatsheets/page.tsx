@@ -1,9 +1,9 @@
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 
-import categoryData from '@/data/categoryData.mjs';
+import categoryData from '@/data/cheatsheetCategory.mjs';
 
-export default function CheatSheetPage() {
+export default function CheatSheetListPage() {
   return (
     <main className='w-section mx-auto my-20'>
       <h1 className='text-4xl font-bold'>Cheatsheets</h1>

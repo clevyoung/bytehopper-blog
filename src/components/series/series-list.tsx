@@ -6,7 +6,7 @@ import { compareDesc } from 'date-fns';
 
 import { Book, Calendar } from '@/components/common/icons';
 
-import seriesData from '@/data/seriesData.mjs';
+import seriesData from '@/data/seriesCategory.mjs';
 
 interface Props {
   count?: number;

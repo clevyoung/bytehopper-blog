@@ -2,7 +2,7 @@ import { allBlogs } from 'contentlayer/generated';
 
 import PostManager from '@/components/post/post-manager';
 
-import seriesData from '@/data/seriesData.mjs';
+import seriesData from '@/data/seriesCategory.mjs';
 
 interface Props {
   params: {

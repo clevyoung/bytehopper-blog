@@ -1,4 +1,4 @@
-const seriesData = [
+const seriesCategory = [
   {
     key: 'React with Typescript',
     slug: 'react-with-typescript',
@@ -49,4 +49,4 @@ const seriesData = [
   },
 ];
 
-export default seriesData;
+export default seriesCategory;
